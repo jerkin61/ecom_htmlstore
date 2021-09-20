@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Kris and King Shop</title>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header" >
+  <div class="container header__top" >
+    <div class="header__logo"  >
+      <h1 class="header__title" >
+        <img src="logo.png" style="height:100px; width: 120px; float:left; padding: 0px; margin-left: -10px; ">
+       <span><img src ="king_kris.png" style="height:50px; width:100px; float:left;"></span>
+      </h1>
+
+      <form class='searchbox' >
+        <input class="searchbar" type="text" onkeyup="filter()" placeholder="Search.." name="search">
+      </form>
+
+  <div> <img src="searchnow.png" style ="height:20px;max-width:400px;float:right;">
+
+  </div>
+      
+    </div>
+    <div class="header__cart">
+      <ul>
+        <li class="header__submenu" id="submenu"> 
+          <img type = "button" class="header__cart-btn" id="toggle-cart-btn" src = "shopping_cart.jpg" style = "height: 70px; width: 80px; margin-right: 10px; margin-top:20px; position:relative;"><svg class="cart" width="24" height="24" viewBox="0 0 24 24">
+ 
+</svg></button>
+          <div id="shopping-cart" class="shopping-cart-container">
+            <table id="cart-content">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Sub-total</th>
+              <tbody></tbody>
+            </table>
+            <p class="total-container" id="total-price"></p>
+            <input id="checkout" type="button" value="Copy order - Already good."
+   onclick="selectElementContents( document.getElementById('shopping-cart') );">
+            <a href="#" id="clear-cart" class="cart-btn">Clear Cart</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  
+</header>
+<main class="container page-content" >
+  <h2 class="page-title">Products`</h2>
+  <div class="grid" id="grid" >
+    
+  
+
+
+    <div class="card" >
+      <img  src="img/555beefloaf.png" class="card__image" alt="">
+      <div class="card__info" >
+        <h4 class="card__title">Beef Loaf</h4>
+        <input class="card__quantity" type = "number" id="input"  min="1" max="2000" value = "1" oninput = "doMath()"style="width:100px;">
+        <p class="card__price" id="price" type= "text" >200.00</p>
+        <p  class="card__total" id="price2"  ></p>
+        <button class="card__btn add-to-cart" data-id="6"  >Add to Cart</button>
+      </div>
+    </div><div class="card" >
+      <img  src="img/a.jpg" class="card__image" alt="">
+      <div class="card__info" >
+        <h4 class="card__title">Alcohol</h4>
+        <input class="card__quantity" type = "number" id="input"  min="1" max="2000" value = "1" oninput = "doMath()"style="width:100px;">
+        <p class="card__price" id="price" type= "text" >350.00</p>
+        <p  class="card__total" id="price2"  ></p>
+        <button class="card__btn add-to-cart" data-id="7"  >Add to Cart</button>
+      </div>
+    </div><div class="card" >
+      <img  src="img/b.jpg" class="card__image" alt="">
+      <div class="card__info" > <h4 class="card__title"></h4>Mustang</h4>
+        <input class="card__quantity" type = "number" id="input"  min="1" max="2000" value = "1" oninput = "doMath()"style="width:100px;">
+        <p class="card__price" id="price" type= "text" >200.00</p>
+        <p  class="card__total" id="price2"  ></p>
+        <button class="card__btn add-to-cart" data-id="8"  >Add to Cart</button>
+      </div>
+    </div><div class="card" >
+      <img  src="img/c.jpg" class="card__image" alt="">
+      <div class="card__info" >
+        <h4 class="card__title">Test Product 1</h4>
+        <input class="card__quantity" type = "number" id="input"  min="1" max="2000" value = "1" oninput = "doMath()"style="width:100px;">
+        <p class="card__price" id="price" type= "text" >420.00</p>
+        <p  class="card__total" id="price2"  ></p>
+        <button class="card__btn add-to-cart" data-id="9"  >Add to Cart</button>
+      </div>
+    </div><div class="card" >
+      <img  src="img/c.jpg" class="card__image" alt="">
+      <div class="card__info" >
+        <h4 class="card__title">More Strength</h4>
+        <input class="card__quantity" type = "number" id="input"  min="1" max="2000" value = "1" oninput = "doMath()"style="width:100px;">
+        <p class="card__price" id="price" type= "text" >210.00</p>
+        <p  class="card__total" id="price2"  ></p>
+        <button class="card__btn add-to-cart" data-id="10"  >Add to Cart</button>
+      </div>
+    </div><div class="card" >
+      <img  src="img/d.jpg" class="card__image" alt="">
+      <div class="card__info" >
+        <h4 class="card__title">Lorem</h4>
+        <input class="card__quantity" type = "number" id="input"  min="1" max="2000" value = "1" oninput = "doMath()"style="width:100px;">
+        <p class="card__price" id="price" type= "text" >310.00</p>
+        <p  class="card__total" id="price2"  ></p>
+        <button class="card__btn add-to-cart" data-id="11"  >Add to Cart</button>
+      </div>
+    </div><div class="card" >
+      <img  src="img/e.jpg" class="card__image" alt="">
+      <div class="card__info" >
+        <h4 class="card__title">Ipsum</h4>
+        <input class="card__quantity" type = "number" id="input"  min="1" max="2000" value = "1" oninput = "doMath()"style="width:100px;">
+        <p class="card__price" id="price" type= "text" >200.00</p>
+        <p  class="card__total" id="price2"  ></p>
+        <button class="card__btn add-to-cart" data-id="12"  >Add to Cart</button>
+      </div>
+    </div><div class="card" >
+      <img  src="img/f.jpg" class="card__image" alt="">
+      <div class="card__info" >
+        <h4 class="card__title">Web Design for beginners</h4>
+        <input class="card__quantity" type = "number" id="input"  min="1" max="2000" value = "1" oninput = "doMath()"style="width:100px;">
+        <p class="card__price" id="price" type= "text" >20.00</p>
+        <p  class="card__total" id="price2"  ></p>
+        <button class="card__btn add-to-cart" data-id="13"  >Add to Cart</button>
+      </div>
+    </div><div class="card" >
+      <img  src="img/g.jpg" class="card__image" alt="">
+      <div class="card__info" >
+        <h4 class="card__title">Web Design for beginners</h4>
+        <input class="card__quantity" type = "number" id="input"  min="1" max="2000" value = "1" oninput = "doMath()"style="width:100px;">
+        <p class="card__price" id="price" type= "text" >200.00</p>
+        <p  class="card__total" id="price2"  ></p>
+        <button class="card__btn add-to-cart" data-id="14"  >Add to Cart</button>
+      </div>
+    </div><div class="card" >
+      <img  src="555beefloaf.png" class="card__image" alt="">
+      <div class="card__info" >
+        <h4 class="card__title">Web Design for beginners</h4>
+        <input class="card__quantity" type = "number" id="input"  min="1" max="2000" value = "1" oninput = "doMath()"style="width:100px;">
+        <p class="card__price" id="price" type= "text" >200.00</p>
+        <p  class="card__total" id="price2"  ></p>
+        <button class="card__btn add-to-cart" data-id="15"  >Add to Cart</button>
+      </div>
+    </div><div class="card" >
+      <img  src="555beefloaf.png" class="card__image" alt="">
+      <div class="card__info" >
+        <h4 class="card__title">Web Design for beginners</h4>
+        <input class="card__quantity" type = "number" id="input"  min="1" max="2000" value = "1" oninput = "doMath()"style="width:100px;">
+        <p class="card__price" id="price" type= "text" >200.00</p>
+        <p  class="card__total" id="price2"  ></p>
+        <button class="card__btn add-to-cart" data-id="16"  >Add to Cart</button>
+      </div>
+    </div><div class="card" >
+      <img  src="555beefloaf.png" class="card__image" alt="">
+      <div class="card__info" >
+        <h4 class="card__title">Web Design for beginners</h4>
+        <input class="card__quantity" type = "number" id="input"  min="1" max="2000" value = "1" oninput = "doMath()"style="width:100px;">
+        <p class="card__price" id="price" type= "text" >200.00</p>
+        <p  class="card__total" id="price2"  ></p>
+        <button class="card__btn add-to-cart" data-id="17"  >Add to Cart</button>
+      </div>
+    </div><div class="card" >
+      <img  src="555beefloaf.png" class="card__image" alt="">
+      <div class="card__info" >
+        <h4 class="card__title">Web Design for beginners</h4>
+        <input class="card__quantity" type = "number" id="input"  min="1" max="2000" value = "1" oninput = "doMath()"style="width:100px;">
+        <p class="card__price" id="price" type= "text" >200.00</p>
+        <p  class="card__total" id="price2"  ></p>
+        <button class="card__btn add-to-cart" data-id="18"  >Add to Cart</button>
+      </div>
+    </div>  
+    <!--.card-->
+
+    
+  </div>
+</main>
+<footer class="footer">
+  <div class="container footer__container">
+    <div class="footer__links">
+    <ul class="footer__list">
+      <li class="footer__list-item"><a class="footer__link-item" href="#">About us</a></li>
+      <li class="footer__list-item"><a class="footer__link-item" href="#">Become an instructor</a></li>
+      <li class="footer__list-item"><a class="footer__link-item" href="#">Legal</a></li>
+    </ul>
+  </div>
+  <div class="credits">
+    <p class="credits__small-text">&copy;2018 Maria Antonietta Perna</p>
+  </div>
+  </div>
+</footer>
+<script src="app.js"></script>
+
+</body>
+</html>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
